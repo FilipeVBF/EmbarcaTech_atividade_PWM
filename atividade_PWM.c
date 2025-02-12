@@ -10,15 +10,18 @@
 // Duty (x/19999)*100 = 7,35 -- 90
 // Duty (x/19999)*100 = 2,5  -- 0
 
+// Definindo os pulsos de graus para cada posição do servo
 #define PULSO_0GRAUS 500
 #define PULSO_90GRAUS 1470
 #define PULSO_180GRAUS 2399
 
+// Variaveis de configuração do PWM
 const uint16_t WRAP_PERIOD = 19999; //valor máximo do contador - WRAP
 const float PWM_DIVISER = 125.0; //divisor do clock para o PWM (125MHz)
 
 uint slice;
 
+// Função para configurar o PWM
 void config_pwm(int GPIO_PWM, int PWM_LEVEL){
   gpio_set_function(GPIO_PWM, GPIO_FUNC_PWM);
   uint slice = pwm_gpio_to_slice_num(GPIO_PWM);
@@ -31,11 +34,11 @@ void config_pwm(int GPIO_PWM, int PWM_LEVEL){
 }
 
 int main(){
-  stdio_init_all();
-
+  // Inicializa as configurações para o uso do PWM
   config_pwm(SERVO_PWM, PULSO_180GRAUS);
   config_pwm(PWM_LED, PULSO_180GRAUS);
 
+  // Define a posição do braço e a intensidade do led a cada 5 segundos
   pwm_set_gpio_level(SERVO_PWM,PULSO_180GRAUS);
   pwm_set_gpio_level(PWM_LED, (PULSO_180GRAUS * 10));
   sleep_ms(5000);
