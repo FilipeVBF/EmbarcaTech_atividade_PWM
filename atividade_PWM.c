@@ -16,8 +16,6 @@
 
 const uint16_t WRAP_PERIOD = 19999; //valor máximo do contador - WRAP
 const float PWM_DIVISER = 125.0; //divisor do clock para o PWM (125MHz)
-const uint16_t LED_STEP = 500; //passo de incremento/decremento para o duty cycle do LED
-uint16_t led_level = 100; //nível inicial do pwm (duty cycle)
 
 uint slice;
 
