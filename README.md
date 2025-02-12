@@ -46,3 +46,4 @@ Este projeto tem como objetivo explorar e implementar a comunicação serial uti
 
 ## Vídeo da Solução
 Segue abaixo o link do vídeo da demonstração do projeto:
+[Ver vídeo](https://drive.google.com/file/d/1a79V0lfpZY5stYrGUfLc_5bbc5y0wgtd/view?usp=sharing).
